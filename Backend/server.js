@@ -10,6 +10,11 @@ app.get('/data',(req,res)=>{
         message:'here is data of user'
     })
 })
+app.get('/names',(req,res)=>{
+    res.json({
+        message:'here is customer names'
+    })
+})
 const PORT=process.env.PORT
 app.listen(PORT,()=>{
     console.log(`app is listening on ${PORT}`)
