@@ -7,7 +7,7 @@ app.get('/',(req,res)=>{
 })
 app.get('/data',(req,res)=>{
     res.json({
-        message:'here is data of user'
+        message:'This is first ci/cd application by -BHAGWAN SINGH DHANGAR'
     })
 })
 app.get('/names',(req,res)=>{
