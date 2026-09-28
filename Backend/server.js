@@ -1,15 +1,19 @@
 const express = require('express')
 const app = express()
 const pool=require('./config/db')
+
 require('dotenv').config()
+const userRoutes=require('./src/routes/user.route')
 
 app.use(express.json())
+app.use('/api/user',userRoutes)
 
 app.get('/', (req, res) => {
     res.send('hello from server')
 })
 
 app.get('/by', (req, res) => {
+    
     res.json({
         message: 'This is first ci/cd application by -BHAGWAN SINGH DHANGAR'
     })

@@ -11,25 +11,25 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_HOST: mysql_3
       DB_USER: root
-    depends_on:
-      mysql_3:
-        condition: service_healthy
+#     depends_on:
+#       mysql_3:
+#         condition: service_healthy
 
-  mysql_3:
-    image: mysql:latest
-    ports:
-      - "3309:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-    volumes:
-      - mysql_data:/var/lib/mysql
+#   mysql_3:
+#     image: mysql:latest
+#     ports:
+#       - "3309:3306"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#       MYSQL_DATABASE: ${DB_NAME}
+#     volumes:
+#       - mysql_data:/var/lib/mysql
 
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+#     healthcheck:
+#       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+#       interval: 5s
+#       timeout: 5s
+#       retries: 10
 
-volumes:
-  mysql_data:
+# volumes:
+#   mysql_data:
